@@ -1,24 +1,25 @@
-package ru.job4j.condition;
+    package ru.job4j.condition;
 
-public class TrgArea {
+    public class TrgArea {
 
-    public static double area(double a, double b, double c) {
+        public static double area(double a, double b, double c) {
 
-        double rsl;
-        double p;
-        double result;
+            double rsl;
+            double p;
+            double result;
 
-        p = (a + b + c) / 2;
-        result = p * (p - a) * (p - b) * (p - c);
+            p = (a + b + c) / 2;
+            result = p * (p - a) * (p - b) * (p - c);
 
-        rsl = Math.sqrt(result);
-        return rsl;
+            rsl = Math.sqrt(result);
+            return rsl;
+        }
+
+        public static void main(String[] args) {
+
+            double rsl = TrgArea.area(2, 2, 2);
+            System.out.println("area (2, 2, 2) = " + rsl);
+
+        }
+
     }
-
-    public static void main(String[] args) {
-        double rsl = TrgArea.area(2, 2, 2);
-        System.out.println("area (2, 2, 2) = " + rsl);
-    }
-
-
-}
