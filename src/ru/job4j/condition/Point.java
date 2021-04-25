@@ -3,16 +3,7 @@ import java.util.Scanner;
 
 public class Point {
     public static double distance(int x1, int y1, int x2, int y2) {
-        double expOne = x2 - x1;
-        double step1 = Math.pow(expOne, 2);
-
-        double expTwo = y2 - y1;
-        double step2 = Math.pow(expTwo, 2);
-
-        double resExp = step1 + step2;
-
-        double rsl = Math.sqrt(resExp);
-        return rsl;
+        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
 
     public static void main(String[] args) {
