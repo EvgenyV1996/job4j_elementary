@@ -7,23 +7,28 @@ import static org.junit.Assert.*;
 public class X2Test {
 
     @Test
-    public void calc() {
-
-        int[][] values = {{1, 1, 1, 1, 3},
-                            {0, 1, 1, 1, 2},
-                            {1, 1, 0, 1, 2},
-                            {1, 1, 1, 0, 1}};
-
-        for (int i = 0; i < values.length; i++){
-            int a = values[i][0];
-            int b = values[i][1];
-            int c = values[i][2];
-            int x = values[i][3];
-            int expected = values[i][4];
-            int rsl = X2.calc(a, b, c, x);
-            /* сравнение полученного значения с ожидаемым */
-            Assert.assertEquals(expected, rsl);
-        }
-
+    public void whenA1B1C1X1then3() {
+        int expected = 3;
+        int rsl = X2.calc(1, 1, 1, 1);
+        Assert.assertEquals(expected, rsl);
     }
+    @Test
+    public void whenA0B1C1X1then2() {
+        int expected = 2;
+        int rsl = X2.calc(0, 1, 1, 1);
+        Assert.assertEquals(expected, rsl);
+    }
+    @Test
+    public void whenA0B1C0X1then2() {
+        int expected = 2;
+        int rsl = X2.calc(1, 1, 0, 1);
+        Assert.assertEquals(expected, rsl);
+    }
+    @Test
+    public void whenA0B1C1X0then1() {
+        int expected = 1;
+        int rsl = X2.calc(1, 1, 1, 0);
+        Assert.assertEquals(expected, rsl);
+    }
+
 }
